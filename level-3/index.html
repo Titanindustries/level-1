@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Escape Room By Max and Greyson</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: blue;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+     h6 {
+      margin-bottom: 20px;
+    }
+    #question {
+      margin-bottom: 20px;
+    }
+    #choices {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #result {
+      margin-bottom: 20px;
+    }
+    #redirect-button {
+      display: none;
+      background-color: light-blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Level 3</h1>
+<h6>By Max and Greyson</h6>
+
+  <div id="question"></div>
+  <div id="choices"></div>
+  <div id="result"></div>
+
+  <script>
+    // Trivia questions and answers
+    const questions = [
+      {
+        question: "If A Cup Has A Lid, Will it have more or less matter loss?",
+        choices: ["No Difference", Less", "More"],
+        answer: 1
+      },
+      {
+        question: "What Is The Strongest Category of Hurricane?",
+        choices: ["6", "4", "5"],
+        answer: 2
+      },
+      {
+        question: "What Tsunami Occured in 2004?",
+        choices: ["Indonesian", "Japanese", "American"],
+        answer: 0
+      },
+      // Add more questions for each round...
+    ];
+
+    // Round counter
+    let round = 0;
+
+    // Function to display a question
+    function displayQuestion() {
+      const currentQuestion = questions[round];
+      const questionElement = document.getElementById("question");
+      const choicesElement = document.getElementById("choices");
+
+      questionElement.innerHTML = currentQuestion.question;
+
+      choicesElement.innerHTML = "";
+      for (let i = 0; i < currentQuestion.choices.length; i++) {
+        const choiceButton = document.createElement("button");
+        choiceButton.innerText = currentQuestion.choices[i];
+        choiceButton.addEventListener("click", function() {
+          checkAnswer(i);
+        });
+        choicesElement.appendChild(choiceButton);
+      }
+    }
+
+    // Function to check the answer
+    function checkAnswer(choice) {
+      const currentQuestion = questions[round];
+      const resultElement = document.getElementById("result");
+      const redirectButton = document.getElementById("redirect-button");
+
+      if (choice === currentQuestion.answer) {
+        resultElement.innerHTML = "Correct!";
+        if (round < questions.length - 1) {
+          round++;
+          setTimeout(function() {
+            displayQuestion();
+            resultElement.innerHTML = "";
+          }, 1000);
+        } else {
+          resultElement.innerHTML = "Your Digit is 2!";
+          redirectButton.style.display = "block";
+        }
+      } else {
+        resultElement.innerHTML = "Wrong answer!";
+        round = 0;
+        setTimeout(function() {
+          displayQuestion();
+          resultElement.innerHTML = "";
+        }, 1000);
+      }
+    }
+
+    // Start the game
+    displayQuestion();
+  </script>
+  <button id="redirect-button" style="display: none;" onclick="window.location.href = 'https://titanindustries.github.io/triviagame/level-4';">Go To Level 4</button>
