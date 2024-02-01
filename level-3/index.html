@@ -7,7 +7,7 @@
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 100px;
-      background-color: cyan;
+      background-color: green;
     }
     h1 {
       margin-bottom: 20px;
@@ -49,18 +49,18 @@
     // Trivia questions and answers
     const questions = [
       {
-        question: "What is an estimated form of Pi?",
-        choices: ["2.14", "3.142", "3.141"],
+        question: "How do You achieve minimal matter loss in a cup system?",
+        choices: ["use grass", "take away the lid", "add a lid"],
         answer: 2
       },
       {
-        question: "if y=6, what is x in the equation -y/-2=x",
-        choices: ["4", "3", "8"],
+        question: "What is the highest categiry hurricane?",
+        choices: ["7", "5", "3"],
         answer: 1
       },
       {
-        question: "What number is the closest to 0?",
-        choices: ["|-0.4|", "0.7", "3.14"],
+        question: "The ___ Tsunami Happened in 2004?",
+        choices: ["Indonesian", "Japanese", "Californian"],
         answer: 0
       },
       // Add more questions for each round...
@@ -103,7 +103,7 @@
             resultElement.innerHTML = "";
           }, 1000);
         } else {
-          resultElement.innerHTML = "Your Digit is 8!";
+          resultElement.innerHTML = "Your Digit is 2!";
           redirectButton.style.display = "block";
         }
       } else {
@@ -119,4 +119,4 @@
     // Start the game
     displayQuestion();
   </script>
-  <button id="redirect-button" style="display: none;" onclick="window.location.href = 'https://titanindustries.github.io/triviagame/level-3';">Go To Level 3</button>
+  <button id="redirect-button" style="display: none;" onclick="window.location.href = 'https://titanindustries.github.io/triviagame/level-4';">Go To Level 4</button>
