@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <h1> Begin Game</h1>
-  </head>
-  <body>
-    <p>By Max And Greyson</p>
-    <p>Remember each digit that the level gives you.</p>
-      <a href="https://titanindustries.github.io/triviagame/level-1">Start Game</a>
-    <a href="https://titanindustries.github.io/">Make Your Guess For The final Code</a>
-  </body>
+<head>
+  <title>Password Protected Page</title>
+   <style>
+    body {
+      background-color: lightSkyBlue;
+    }
+  </style>
+  <script>
+    function checkPassword() {
+      var password = document.getElementById("password").value;
+      
+      if (password === "5827964301") {
+        window.location.href = "titanindustries.github.io/triviagame/5827964301"; // Put in link here
+      } else {
+        alert("Go Back And Check Your Digits");
+      }
+    }
+  </script>
+    <script>
+    function redirectToWebsite() {
+      window.location.href = "titanindustries.github.io/triviagame/level-1"; // Replace with the desired website URL
+    }
+  </script>
+</head>
+<body>
+  <h2>Enter the Digits you found to win the Game</h2>
+  <input type="password" id="password">
+  <button onclick="checkPassword()">Submit</button>
+  <button onclick="redirectToWebsite()">Start Game!</button>
+</body>
 </html>
